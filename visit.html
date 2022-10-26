@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- This is to use a rich set of stylable icons -->
+    <!-- The access is free of charge for the below limited icons -->
+    <script
+      src="https://kit.fontawesome.com/76c48d1107.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>SpacePark - Theme Park</title>
+    <meta charset="UTF-8" />
+    <meta
+      name="description"
+      content="SpacePark - The best Theme Park in the world. Your space journey begins here."
+    />
+    <meta
+      name="author"
+      content="Anjelo Mati, Yu Xinyi, Maria AbdulGafoor Sanage, Piotr Połatyński, Li Shuman, Steve"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="refresh" content="600" />
+    <meta
+      name="keywords"
+      content="Space Exploration Family Adventure Attraction Leisure 'Theme Park'"
+    />
+    <link rel="stylesheet" type="text/css" href="StyleSheet/style.css" />
+  </head>
+
+  <!-- Page built on gird layout - see css for more details -->
+  <body class="grid-container-visit">
+    <!--Custom made logotype, by Piotr - free to use for personal or commercial purposes -->
+    <div id="mainLogo">
+      <a href="index.html">
+        <object data="media/logo_file.png" width="122" height="108"> </object>
+      </a>
+    </div>
+
+    <!-- Important information placeholder at the top -->
+    <div id="topInfo">
+      <div id="starfield"></div>
+      <div id="topInfoText">
+        We are open! Covid-19 safety precautions apply: Are
+        <strong>you</strong> vaccinated yet?
+      </div>
+    </div>
+
+    <!-- Search text box and button -->
+    <div id="searchArea">
+      <input id="searchInput" type="text" placeholder="Search..." />
+      <!-- Button for future search feature - not implemented yet, 
+        hence displaying an interim message for now-->
+      <button class="button" type="button" onclick="search();">
+        <!--Creative commons license, Wikimedia Commons, https://commons.wikimedia.org/wiki/File:Search-\-v2.png-->
+        <img
+          src="media/search2.png"
+          alt="Search button"
+          width="10"
+          height="10"
+        />
+      </button>
+      <div></div>
+    </div>
+
+    <!-- This menu is styled and animated -->
+    <div id="topMenu">
+      <nav>
+        <ol>
+          <li class="dropdown">
+            <a href="index.html" class="dropbtn">Discover</a>
+            <div class="dropdown-content">
+              <a href="index.html#aboutSpacePark">About SpacePark</a>
+              <a href="index.html#location">Location</a>
+            </div>
+          </li>
+          <li class="dropdown">
+            <a href="visit.html" class="dropbtn">Plan your visit</a>
+            <div class="dropdown-content">
+              <a href="index.html#tickets">Tickets</a>
+              <a href="visit.html#operatingHours">Operating Hours</a>
+            </div>
+          </li>
+          <li class="dropdown">
+            <a href="attractions.html" class="dropbtn">Attractions</a>
+            <div class="dropdown-content">
+              <a href="attractions.html#attractions">Our Attractions</a>
+              <a href="attractions.html#attractionsMap">Attractions Map</a>
+            </div>
+          </li>
+          <li class="dropdown">
+            <a href="visit.html" class="dropbtn">Facilities</a>
+            <div class="dropdown-content">
+              <a href="visit.html#transportation">Transportation</a>
+              <a href="visit.html#dining">Dining</a>
+              <a href="visit.html#accommodation">Accommodation</a>
+              <a href="visit.html#disabilities">Disabilities</a>
+            </div>
+          </li>
+          <li><a href="index.html#faq">Frequently Asked Questions</a></li>
+        </ol>
+      </nav>
+    </div>
+
+    <!-- Navigation finishing here -->
+
+    <!-- Cookies -->
+    <div id="cookiesBar">
+      <div>
+        <p>We collect cookies!<sup>*</sup></p>
+        <p id="cookiesDisclaimer">
+          <sup>*</sup>It is all for your convenience (and a little bit for our
+          business, too) hence please give us a chance and agree!
+        </p>
+      </div>
+      <div id="cookiesDisclaimerButtons">
+        <button onclick="w3_close()" id="cookiesCloseButton">&times;</button>
+        <div>
+          <button onclick="w3_close()" id="cookiesDisagreeButton">
+            Disagree
+          </button>
+          <button onclick="w3_close()" id="cookiesAgreeButton">Agree</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main page image -->
+    <!--Creative commons license, source: Wikimedia Commonms, url: https://commons.wikimedia.org/wiki/File:Macao_Science_Center_2011.JPG -->
+    <a class="mainPageImage">
+      <img
+        src="media/visitmain.jpg"
+        alt="The park outside with many visitors"
+      />
+    </a>
+
+    <section id="operatingHours">
+      <div class="visitSectionHeader">
+        <h2>
+          <i class="fas fa-clock"></i>
+          Operating Hours
+        </h2>
+      </div>
+
+      <!-- Table with opening hours  -->
+      <div class="table visitSectionBody">
+        <table>
+          <thead>
+            <tr>
+              <th id="th1">Day of the week</th>
+              <th id="th2">Opening</th>
+              <th id="th3">Closing</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Monday - Friday</td>
+              <td>10:00 AM</td>
+              <td>6:00 PM</td>
+            </tr>
+            <tr>
+              <td>Saturday</td>
+              <td>9:00 AM</td>
+              <td>9:00 PM</td>
+            </tr>
+            <tr>
+              <td>Sunday</td>
+              <td>9:00 AM</td>
+              <td>7:00 PM</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Facilities part, following the same pattern -->
+
+    <!-- Facilities-Transportation -->
+    <section id="transportation">
+      <div class="visitSectionHeader">
+        <h2>
+          <i class="fas fa-bus"></i>
+          Transportation
+        </h2>
+      </div>
+      <div class="visitSectionBody">
+        <p>
+          SpacePark is well connected for whatever travel method you choose.
+          Arriving by air? SFO is just 26 miles North of us. By car, we are a
+          short drive south from the airport or about 12 miles North of San
+          Jose, right off the 101 freeway. If you're using transit, SpacePark is
+          on the 42 and 99 bus routes which depart every hour from the San
+          Francisco Embarcadero next to the Ferry Building at the SF Transit
+          Center.
+        </p>
+      </div>
+    </section>
+
+    <!-- Dining -->
+    <section id="dining">
+      <div class="visitSectionHeader">
+        <h2>
+          <i class="fas fa-utensils"></i>
+          Dining
+        </h2>
+      </div>
+      <div class="visitSectionBody">
+        <p>
+          Astronauts needs to eat well for the demands of space travel!
+          SpacePark has two world-class restaurants, UFO and Yuri's. UFO caters
+          to families of all sizes and includes a self-serve salad bar and
+          fountain drinks area. Yuri's celebrates the best of Russian cuisine,
+          including our world-famous Space Burger. All drinks (not incuding
+          alcohol) are completely free at Yuri's!
+        </p>
+      </div>
+    </section>
+
+    <!-- Accomodation -->
+    <section id="accommodation">
+      <div class="visitSectionHeader">
+        <h2>
+          <i class="fas fa-hotel"></i>
+          Accommodation
+        </h2>
+      </div>
+
+      <div class="visitSectionBody">
+        <p>
+          With three hotels within a 4-mile radius of SpacePark, you're on your
+          way to a relaxing stay. Try LaunchPad Hotel, out premier partner with
+          free hourly bus to and from SpacePark itself. Every LaunchPad room
+          includes space ice-cream snack bars for the kids and a voice-activated
+          astonomical telescope: Ask it to show you Mars! The nearby Hilton and
+          DoubleTree Hotels are also recommended by SpacePark.
+        </p>
+      </div>
+    </section>
+
+    <!-- Facilities-Disabilities -->
+    <section id="disabilities">
+      <div class="visitSectionHeader">
+        <h2>
+          <i class="fas fa-wheelchair"></i>
+          Disabilities
+        </h2>
+      </div>
+      <div class="visitSectionBody">
+        <p>
+          SpacePark prides itself on inclusivity and welcomes all
+          differently-able visitors. All of our rides include accessible options
+          and restraint systems and our staff are fully trained to safely cater
+          and help with any issues which may occur. SpacePark includes dedicated
+          accessible parking at the entrace to the park itself which may also be
+          reserved in advance if needed. SpacePark is accessible to all.
+        </p>
+      </div>
+    </section>
+
+    <!-- Footer with website map (intentionally different than the menu), 
+      social media and other basic information 
+      Link are highlighted on hover    
+    -->
+    <footer>
+      <div id="footerLists">
+        <!-- Footnoter- HomePage -->
+        <div class="infoGroup">
+          <h3>Home Page:</h3>
+          <ul>
+            <li><a href="index.html#aboutSpacePark">About SpacePark</a></li>
+            <li><a href="index.html#location">Location</a></li>
+            <li><a href="index.html#tickets">Tickets</a></li>
+            <li><a href="index.html#faq">FAQ</a></li>
+          </ul>
+        </div>
+
+        <!-- Footnoter- Attractions -->
+        <div class="infoGroup">
+          <h3>Attractions:</h3>
+          <ul>
+            <li><a href="attractions.html#attractions">Our attractions</a></li>
+            <li>
+              <a href="attractions.html#attractionsMap">Attractions map</a>
+            </li>
+          </ul>
+        </div>
+        <!-- Footnoter- Facilities (visits) -->
+        <div class="infoGroup">
+          <h3>Facilities:</h3>
+          <ul>
+            <li><a href="visit.html#transportation">Transportation</a></li>
+            <li><a href="visit.html#dining">Dining</a></li>
+            <li><a href="visit.html#accommodation">Accommodation</a></li>
+            <li><a href="visit.html#disabilities">Disabilities</a></li>
+          </ul>
+        </div>
+
+        <!-- Footnoter- Contact -->
+        <div id="contactDetails" class="infoGroup">
+          <h3>Contact details:</h3>
+          <div class="footerListItems">
+            <ul>
+              <li>SpacePark Corporation Ltd</li>
+              <li>1010 Web Development st.</li>
+              <li>UoL Metropoly</li>
+              <li>10110 Computer Science</li>
+            </ul>
+            <ul id="socialLinks">
+              <li>
+                <!--Creative commons license, source: Wikimedia Commons, url: https://commons.wikimedia.org/wiki/File:Facebook_icon_192.png , -->
+                <a href="https://facebook.com">
+                  <img
+                    class="social-icon"
+                    alt="Facebook icon"
+                    src="media/facebookIcon.png"
+                  />
+                </a>
+              </li>
+              <li>
+                <!--Creative commons license, source: Wikimedia Commons, url: https://commons.wikimedia.org/wiki/File:Antu_youtube-dl.svg , -->
+                <a href="https://youtube.com">
+                  <img
+                    class="social-icon"
+                    alt="Youtube icon"
+                    src="media/youtubeIcon.svg"
+                  />
+                </a>
+              </li>
+              <li>
+                <!--Creative commons license, source: Wikimedia Commons, url: https://commons.wikimedia.org/wiki/File:CIS-A2K_Instagram_Icon_(Pink).svg -->
+                <a href="https://instagram.com">
+                  <img
+                    class="social-icon"
+                    alt="Instagram icon"
+                    src="media/instagramIcon.svg"
+                  />
+                </a>
+              </li>
+              <li>
+                <!--Creative commons license, source: IconScout.com, url: https://iconscout.com/icon/twitter-241 -->
+                <a href="https://twitter.com">
+                  <img
+                    class="social-icon"
+                    alt="Twitter icon"
+                    src="media/twitterIcon.png"
+                  />
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div>
+        <!-- Button to move to top -->
+        <button onclick="topFunction()" id="topBtn" title="Go to top">
+          <!-- Creative common license, source: Back Icon by Jemis Mali on Iconscout, url: https://iconscout.com/icon/back-197 -->
+          <img src="media/topbutton2.png" alt="Search button" />
+        </button>
+
+        <!-- Footnoter- Copyrights -->
+        <div id="copyrightNote">
+          <p>All rights Reserved &copy; 2021 SpacePark Corporation</p>
+        </div>
+      </div>
+      <!-- JavaScript code for collapsible faq and the got to top button -->
+      <script>
+        // Collapsible faq
+        var coll = document.getElementsByClassName("faqQuestion");
+        var i;
+
+        for (i = 0; i < coll.length; i++) {
+          coll[i].addEventListener("click", function () {
+            this.classList.toggle("active");
+            var content = this.nextElementSibling;
+            if (content.style.display === "block") {
+              content.style.display = "none";
+            } else {
+              content.style.display = "block";
+            }
+          });
+        }
+
+        // search
+        document
+          .getElementById("searchInput")
+          .addEventListener("keyup", function (event) {
+            event.preventDefault();
+            if (event.keyCode === 13) {
+              search();
+            }
+          });
+
+        function search() {
+          alert("Search not implemented at this time...");
+        }
+        //Get the button:
+        mybutton = document.getElementById("topBtn");
+
+        // When the user clicks on the button, scroll to the top of the document
+        function topFunction() {
+          document.body.scrollTop = 0; // For Safari
+          document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+        }
+
+        // Cookies and their buttons
+        function w3_close() {
+          document.getElementById("cookiesBar").style.display = "none";
+        }
+      </script>
+    </footer>
+  </body>
+</html>

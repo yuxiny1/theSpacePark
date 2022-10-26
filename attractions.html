@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- This is to use a rich set of stylable icons -->
+    <!-- The access is free of charge for the below limited icons -->
+    <script
+      src="https://kit.fontawesome.com/76c48d1107.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>SpacePark - Attractions</title>
+    <meta charset="UTF-8" />
+    <meta
+      name="description"
+      content="SpacePark - The best Theme Park in the world. Your space journey begins here."
+    />
+    <meta
+      name="author"
+      content="Anjelo Mati, Yu Xinyi, Maria AbdulGafoor Sanage, Piotr Połatyński, Li Shuman, Steve"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="refresh" content="600" />
+    <meta
+      name="keywords"
+      content="Space Exploration Family Adventure Attraction Leisure 'Theme Park'"
+    />
+    <link rel="stylesheet" type="text/css" href="StyleSheet/style.css" />
+  </head>
+
+  <!-- Page built on gird layout - see css for more details -->
+  <body class="grid-container-attractions">
+    <!-- Link to the home page and main logo, slightly animated -->
+
+    <!--Custom made logotype by Piotr. Free to use for commercial and personal use-->
+    <div id="mainLogo">
+      <a href="index.html">
+        <object data="media/logo_file.png" width="122" height="108"> </object>
+      </a>
+    </div>
+
+    <!-- Important information placeholder at the top -->
+    <div id="topInfo">
+      <div id="starfield"></div>
+      <div id="topInfoText">
+        We are open! Covid-19 safety precautions apply: Are
+        <strong>you</strong> vaccinated yet?
+      </div>
+    </div>
+
+    <!-- Search text box and button -->
+    <div id="searchArea">
+      <input id="searchInput" type="text" placeholder="Search..." />
+      <!-- Button for future search feature - not implemented yet, 
+        hence displaying an interim message for now-->
+      <button class="button" type="button" onclick="search();">
+        <!--Creative commons license, Wikimedia Commons, https://commons.wikimedia.org/wiki/File:Search-\-v2.png-->
+        <img
+          src="media/search2.png"
+          alt="Search button"
+          width="10"
+          height="10"
+        />
+      </button>
+      <div></div>
+    </div>
+
+    <!-- This menu is styled and animated -->
+    <div id="topMenu">
+      <nav>
+        <ol>
+          <li class="dropdown">
+            <a href="index.html" class="dropbtn">Discover</a>
+            <div class="dropdown-content">
+              <a href="index.html#aboutSpacePark">About SpacePark</a>
+              <a href="index.html#location">Location</a>
+            </div>
+          </li>
+          <li class="dropdown">
+            <a href="visit.html" class="dropbtn">Plan your visit</a>
+            <div class="dropdown-content">
+              <a href="index.html#tickets">Tickets</a>
+              <a href="visit.html#operatingHours">Operating Hours</a>
+            </div>
+          </li>
+          <li class="dropdown">
+            <a href="attractions.html" class="dropbtn">Attractions</a>
+            <div class="dropdown-content">
+              <a href="attractions.html#attractions">Our Attractions</a>
+              <a href="attractions.html#attractionsMap">Attractions Map</a>
+            </div>
+          </li>
+          <li class="dropdown">
+            <a href="visit.html" class="dropbtn">Facilities</a>
+            <div class="dropdown-content">
+              <a href="visit.html#transportation">Transportation</a>
+              <a href="visit.html#dining">Dining</a>
+              <a href="visit.html#accommodation">Accommodation</a>
+              <a href="visit.html#disabilities">Disabilities</a>
+            </div>
+          </li>
+          <li><a href="index.html#faq">Frequently Asked Questions</a></li>
+        </ol>
+      </nav>
+    </div>
+
+    <!-- Navigation finishing here -->
+
+    <!-- Cookies bottom bar - animated, not implemented with the actual cookies, 
+      hence will always load on page opening-->
+    <div id="cookiesBar">
+      <div>
+        <p>We collect cookies!<sup>*</sup></p>
+        <p id="cookiesDisclaimer">
+          <sup>*</sup>It is all for your convenience (and a little bit for our
+          business, too) hence please give us a chance and agree!
+        </p>
+      </div>
+      <div id="cookiesDisclaimerButtons">
+        <button onclick="w3_close()" id="cookiesCloseButton">&times;</button>
+        <div>
+          <button onclick="w3_close()" id="cookiesDisagreeButton">
+            Disagree
+          </button>
+          <button onclick="w3_close()" id="cookiesAgreeButton">Agree</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main page image -->
+    <!--Creative commons license, source: Wikimedia Commons, url: https://commons.wikimedia.org/wiki/File:Boarding_the_Space_Montain_ride_(9294444050).jpg -->
+
+    <a class="mainPageImage"
+      ><img src="media/attractionsmain.jpg" alt="Park's image from top"
+    /></a>
+
+    <!-- Attractions section header -->
+    <div id="ourAttHeader" class="sectionHeader">
+      <h1>Our Attractions</h1>
+    </div>
+
+    <!-- Attractions- NASA Zone -->
+    <section id="attractions_nasaZone">
+      <div id="nasaZone" class="attractionHeader">
+        <h3>NASA Zone</h3>
+      </div>
+      <!--Creative commons license, source: Flickr, url: https://live.staticflickr.com/8092/8397626425_5edcabafef_k.jpg -->
+      <div class="attractionImg">
+        <a>
+          <img
+            src="media/nasazone.jpg"
+            alt="Large levitating mirror ball with many visitors at night"
+          />
+        </a>
+      </div>
+      <div class="attractionBody">
+        <p>
+          Re-live the hayday of NASA and step back in to the 1980's when NASA
+          still made and flew things. NASA Zone offers a historical perspective
+          of the good old days when cars would kill you and cigarettes were a
+          great idea. See inside a full-size model of the Space Shuttle and try
+          on a real space suite made for the famous shuttle Hubble Space
+          Telescope EVA. Stand underneath a used Apollo-era Saturn 5 rocket
+          engine and feel the vibration as it starts up!
+        </p>
+      </div>
+    </section>
+
+    <!-- Attractions- SpaceX Zone -->
+    <section id="attractions_spaceXZone">
+      <div id="spaceXZone" class="attractionHeader">
+        <h3>SpaceX Zone</h3>
+      </div>
+      <!--Creative commons license, source: Flickr.com, ur: https://www.flickr.com/photos/nasahqphoto/35078806995-->
+      <div class="attractionImg">
+        <a>
+          <img
+            src="media/spacexzone.jpg"
+            alt="Space rocket launching next to SpaceX facility"
+          />
+        </a>
+      </div>
+      <div class="attractionBody">
+        <p>
+          Your adventure begins with a real SpaceX launch (every day at 3pm)
+          taking people to Sydney, Australia in only 26 minutes. The fun
+          continues as the incoming return flight lands at 3:30pm direct from
+          SpaceX's offshore launch facility in Sydney. From there, explore the
+          SpaceX operation center where the rockets are scheduled and controled.
+          Watch real SpaceX employees press buttons and fiddle with knobs to
+          launch the rocket!
+        </p>
+      </div>
+    </section>
+
+    <!-- Attractions- blackHolesZone -->
+
+    <section id="attractions_blackHolesZone">
+      <div id="blackHolesZone" class="attractionHeader">
+        <h3>Black Holes Zone</h3>
+      </div>
+      <!--Creative commons license, source: Flickr.com, url: https://www.flickr.com/photos/nasamarshall/3248495098 , -->
+      <div class="attractionImg">
+        <a>
+          <img
+            src="media/blackholeszone.jpg"
+            alt="Black hole with bright spinning disc around and perpendicular jet shooting up and down from the center"
+            width="450"
+            height="500"
+          />
+        </a>
+      </div>
+      <div class="attractionBody">
+        <p>
+          Fall in to your own black hole at our VR physics simulator. You might
+          want to wait for lunch in case you lose it! Our black hole simulator
+          is so real it includes real blackness brought from space! You can see
+          the other side of the black hole thanks to our relativistically
+          accurate simulation engine. Measure the hole size using our
+          Schwartzschild radius measuring stick. But don't worry, you're safely
+          on Earth the whole time thanks to the magic of VR!
+        </p>
+      </div>
+    </section>
+
+    <!-- Attractions- Searching For Extraterrestrial Life -->
+
+    <section id="attractions_seti">
+      <div id="seti" class="attractionHeader">
+        <h3>Searching For Extraterrestrial Life</h3>
+      </div>
+      <div class="attractionImg">
+        <!--Creative commons license, source: Flickr.com, url: https://www.flickr.com/photos/merajchhaya/9483121616 , -->
+        <a>
+          <img
+            src="media/seti.jpg"
+            alt="Radiotelescope at night of full of stars"
+            width="450"
+            height="500"
+          />
+        </a>
+      </div>
+      <div class="attractionBody">
+        <p>
+          Aliens are already here on Earth, you can see them any night in their
+          UFOs. But if they weren't, then our SETI area is the next best thing!
+          Look for little green men through our phased array radio telescope and
+          examing Martian becterial samples returned from Mars Base 1. Where did
+          the bacteria come from? Explore these mysteries and more at the SETI
+          exhibit!
+        </p>
+      </div>
+    </section>
+
+    <!-- Attractions-Mars Exploration -->
+
+    <section id="attractions_marsExploration">
+      <div id="marsExploration" class="attractionHeader">
+        <h3>Mars Exploration</h3>
+      </div>
+      <!--Creative commons license, source: Wikimedia Commons, url: https://commons.wikimedia.org/wiki/File:Terraforming_of_Mars.jpg, -->
+      <div class="attractionImg">
+        <!--Creative commons license, source: , -->
+        <a>
+          <img
+            src="media/marsexploration.jpg"
+            alt="Happy astronaut standing on Mars ground"
+            width="450"
+            height="500"
+          />
+        </a>
+      </div>
+      <div class="attractionBody">
+        <p>
+          So you want to go to Mars but can't afford the ticket? Out 10,000 sq.
+          m. enclosed MarsScape simulator includes real Martian sand and a
+          replica of the original Mars Base 1 entrance port. But don't worry!
+          You won't need your spacesuit as you explore this foreign world and
+          all it's mysteries. There's even dinosaur bones to uncover near the
+          base to confuse and entertain the budding paleontologist.
+        </p>
+      </div>
+    </section>
+
+    <!-- Attractions-International Space Station -->
+
+    <section id="attractions_iss">
+      <div id="iss" class="attractionHeader">
+        <h3>International Space Station</h3>
+      </div>
+      <div class="attractionImg">
+        <!--Creative commons license, source: Flickr.com, url: https://www.flickr.com/photos/nasamarshall/3907196583, -->
+        <a>
+          <img
+            src="media/iss.jpg"
+            alt="International Space Station on top of the Earth"
+            width="450"
+            height="500"
+          />
+        </a>
+      </div>
+      <div class="attractionBody">
+        <p>
+          The ISS may have blown up during the First Alien War, but you can
+          relive its glory inside a full scale, 100% accurate model. Put on your
+          spacesuit and go underwater (simulating no gravity) and float around
+          this marvel of engineering. The FakeISS even includes a reconstructed
+          pergola unit with breathtaking views of the Earth as it was before we
+          defeated the Alien Hordes.
+        </p>
+      </div>
+    </section>
+
+    <!-- Attractions-ExperienmentalZone -->
+
+    <section id="attractions_experimentalZone">
+      <div id="experimentalZone" class="attractionHeader">
+        <h3>Experimental Zone</h3>
+      </div>
+      <div class="attractionImg">
+        <!--Creative commons license, source: Pxhere.com, url: https://pxhere.com/en/photo/1190539, -->
+        <a>
+          <img
+            src="media/experimentalzone.jpg"
+            alt="Experimental hall"
+            width="450"
+            height="500"
+          />
+        </a>
+      </div>
+      <div class="attractionBody">
+        <p>
+          Build <strong>real</strong> experiments using laser, neutron beams and
+          anything else you can find in our reclaimed nuclear weapons
+          laboratory! Only at SpacePark can you find the mass of the positron
+          using readily-available equipment, all certified by the National
+          Science Foundation!
+        </p>
+      </div>
+    </section>
+
+    <!-- Attractions-MovieZone -->
+
+    <section id="attractions_movieZone">
+      <div id="moviesZone" class="attractionHeader">
+        <h3>Movies Zone</h3>
+      </div>
+      <div class="attractionImg">
+        <!--Creative commons license, source: Flick.com, url: https://www.flickr.com/photos/jack_hargreaves_shed/19827689281 -->
+        <a>
+          <img
+            src="media/movieszone.jpg"
+            alt="Image with famous Hollowood movies about space"
+            width="450"
+            height="500"
+          />
+        </a>
+      </div>
+      <div class="attractionBody">
+        <p>
+          Movies play an important part in space exploration, from 2001 to
+          Aliens 3 they have continually helped the public imagine and feel the
+          magic of space. In Movie Zone you can argue with a real HAL 9000
+          computer - can you get it to close the pod bay doors? Escape an alien
+          nest and shoot real predators in our space colony simulator.
+        </p>
+      </div>
+    </section>
+
+    <!-- Attractions-Movie Theater -->
+
+    <section id="attractions_movieTheater">
+      <div id="movieTheater" class="attractionHeader">
+        <h3>Movie Theater</h3>
+      </div>
+      <div class="attractionImg">
+        <!--Creative commons license, source: Flickr.com, url: https://www.flickr.com/photos/nasa_goddard/4582911804 -->
+        <a>
+          <img
+            src="media/movietheater.jpg"
+            alt="Movie venue with visitors and 3D astronaut on the screen"
+            width="450"
+            height="500"
+          />
+        </a>
+      </div>
+      <div class="attractionBody">
+        <p>
+          Ready to be sucked in to space? Watch a 3D tour unfold showing the
+          greatest moments in space exploration. Sit with Yuri Gagarin as he
+          orbits the Eath for the first time. Ride along on the first Space
+          Shuttle launch and then plunge in the depths of the universe as you
+          explore a guided tour of the nearest 10 solar systems.
+        </p>
+      </div>
+    </section>
+
+    <!-- Simulators part begins here - starting with section header-->
+    <div id="simZoneHeader" class="sectionHeader">
+      <h1>Simulators Zone</h1>
+    </div>
+
+    <!-- Dedicated section for the Astronaut Training -->
+
+    <section id="attractions_astronautTraining">
+      <div id="astronautTraining" class="attractionHeader">
+        <h3>Astronaut Training</h3>
+      </div>
+      <div class="attractionImg">
+        <!--Creative commons license, source: Flickr.com, url: https://www.flickr.com/photos/nasa2explore/9733416483/ , -->
+        <a>
+          <img
+            src="media/astronauttraining.jpg"
+            alt="Smiling man sitting on the rotating chair"
+            width="450"
+            height="500"
+          />
+        </a>
+      </div>
+      <div class="attractionBody">
+        <p>
+          Learn to float like a real astronaut in our zero-g training harnesses.
+          Your simulated mission begins by exiting the air lock in to the vast
+          inky blackness of space. From there, your task is to repair the pod
+          bay doors using special space spanners. Can you do it in time? The
+          clock is ticking to save the space station and return safely to Earth,
+          all the while guided by our expert astronaut trainers.
+        </p>
+      </div>
+    </section>
+
+    <!-- Pilot the Spaceship -->
+    <section id="attractions_pilotTheSpaceship">
+      <div id="pilotTheSpaceship" class="attractionHeader">
+        <h3>Pilot The Spaceship</h3>
+      </div>
+      <div class="attractionImg">
+        <!--Creative commons license, source: Picryl.com, url: https://picryl.com/media/simulator-ride-sally-k-acfebf -->
+        <a>
+          <img
+            src="media/pilotthespaceship.jpg"
+            alt="Hydraulic capsule of spaceship simulator"
+            width="450"
+            height="500"
+          />
+        </a>
+      </div>
+      <div class="attractionBody">
+        <p>
+          Fly an original NASA Space Shuttle simulator to the stars. You and
+          three friends will launch, fly and land the closest thing to a real
+          Space Shuttle. Talk to mission control and work your assigned mission
+          tasks one by one as you push the boundaries of spaceflight. But wait,
+          there's more! Open the bay doors and get ready to accept a 100%
+          accurate communications satellite that needs repairs. Fix it quickly
+          before returning to a safe landing at Kennedy Space Center!
+        </p>
+      </div>
+    </section>
+
+    <!-- Low Gravity Walk -->
+
+    <section id="attractions_lowGravity">
+      <div id="lowGravityWalk" class="attractionHeader">
+        <h3>Low Gravity Walk</h3>
+      </div>
+      <div class="attractionImg">
+        <!--Creative commons license, source: Wikimedia Commons, url: https://commons.wikimedia.org/wiki/File:The_16th-G_Chair_at_Space_Camp.jpg-->
+        <a>
+          <img
+            src="media/lowgravitywalk.jpg"
+            alt="Person floating on the lines, with virtual reality goggles and large screen next to, displaying surface of the Moon and visible Earth"
+            width="450"
+            height="500"
+          />
+        </a>
+      </div>
+      <div class="attractionBody">
+        <p>
+          What does low gravity feel like? How far can you jump? We can simulate
+          Moon or Mars gravity instantly at the Low Gravity Walk. You'll be
+          doing somersaults 30 feet in the air in the safe hands of our gravity
+          experts. Want to feel how heavy it is to walk on Jupiter? For a small
+          additional fee we can make you weigh like one million killigrams to
+          give you just a taste of what extreme gravity can feel like!
+        </p>
+      </div>
+    </section>
+
+    <!-- Attractions Map - with clickable circle areas, 
+      linking to each attraction-->
+    <div id="mapHeader" class="sectionHeader">
+      <h1>Attractions Map</h1>
+    </div>
+    <section id="attractionsMap">
+      <div class="attractionHeader">
+        <h2>Recommended Route</h2>
+        <p>Click any circle to learn more!</p>
+      </div>
+      <!--Custom made image by Piotr - free for commerical and personal use -->
+      <!-- Any image resizing will require remapping some or all of the coordinates -->
+      <img
+        src="media/attractionsmap.png"
+        alt="Attractions map"
+        usemap="#attractionsMap"
+      />
+      <map name="attractionsMap">
+        <area
+          shape="circle"
+          coords="91,69,50"
+          alt="NASAZone"
+          href="#nasaZone"
+        />
+        <area
+          class="mapArea"
+          shape="circle"
+          coords="260,125,50"
+          alt="SpaceXZone"
+          href="#spaceXZone"
+        />
+        <area
+          shape="circle"
+          coords="150,150,50"
+          alt="BlackHolesZone"
+          href="#blackHolesZone"
+        />
+        <area shape="circle" coords="51,200,50" alt="SETIZone" href="#seti" />
+        <area
+          shape="circle"
+          coords="60,250,50"
+          alt="MarsExploration"
+          href="#marsExploration"
+        />
+        <area shape="circle" coords="37,370,50" alt="ISS" href="#iss" />
+        <area
+          shape="circle"
+          coords="400,300,50"
+          alt="ExperimentalZone"
+          href="#experimentalZone"
+        />
+        <area
+          shape="circle"
+          coords="460,250,50"
+          alt="MoviesZone"
+          href="#moviesZone"
+        />
+        <area
+          shape="circle"
+          coords="500,150,50"
+          alt="MovieTheather"
+          href="#movieTheater"
+        />
+        <area
+          shape="circle"
+          coords="830,130,50"
+          alt="AstronautTraining"
+          href="#astronautTraining"
+        />
+        <area
+          shape="circle"
+          coords="810,230,50"
+          alt="PilotTheSpaceShip"
+          href="#pilotTheSpaceship"
+        />
+        <area
+          shape="circle"
+          coords="820,335,50"
+          alt="LowGravityWalk"
+          href="#lowGravityWalk"
+        />
+      </map>
+    </section>
+
+    <!-- Footer with website map (intentionally different than the menu), 
+      social media and other basic information 
+      Link are highlighted on hover    
+    -->
+    <footer>
+      <div id="footerLists">
+        <!-- Footnoter- HomePage -->
+        <div class="infoGroup">
+          <h3>Home Page:</h3>
+          <ul>
+            <li><a href="index.html#aboutSpacePark">About SpacePark</a></li>
+            <li><a href="index.html#location">Location</a></li>
+            <li><a href="index.html#tickets">Tickets</a></li>
+            <li><a href="index.html#faq">FAQ</a></li>
+          </ul>
+        </div>
+
+        <!-- Footnoter- Attractions -->
+        <div class="infoGroup">
+          <h3>Attractions:</h3>
+          <ul>
+            <li><a href="attractions.html#attractions">Our attractions</a></li>
+            <li>
+              <a href="attractions.html#attractionsMap">Attractions map</a>
+            </li>
+          </ul>
+        </div>
+        <!-- Footnoter- Facilities (visits) -->
+        <div class="infoGroup">
+          <h3>Facilities:</h3>
+          <ul>
+            <li><a href="visit.html#transportation">Transportation</a></li>
+            <li><a href="visit.html#dining">Dining</a></li>
+            <li><a href="visit.html#accommodation">Accommodation</a></li>
+            <li><a href="visit.html#disabilities">Disabilities</a></li>
+          </ul>
+        </div>
+
+        <!-- Footnoter- Contact -->
+        <div id="contactDetails" class="infoGroup">
+          <h3>Contact details:</h3>
+          <div class="footerListItems">
+            <ul>
+              <li>SpacePark Corporation Ltd</li>
+              <li>1010 Web Development st.</li>
+              <li>UoL Metropoly</li>
+              <li>10110 Computer Science</li>
+            </ul>
+            <ul id="socialLinks">
+              <li>
+                <!--Creative commons license, source: Wikimedia Commons, url: https://commons.wikimedia.org/wiki/File:Facebook_icon_192.png , -->
+                <a href="https://facebook.com">
+                  <img
+                    class="social-icon"
+                    alt="Facebook icon"
+                    src="media/facebookIcon.png"
+                  />
+                </a>
+              </li>
+              <li>
+                <!--Creative commons license, source: Wikimedia Commons, url: https://commons.wikimedia.org/wiki/File:Antu_youtube-dl.svg , -->
+                <a href="https://youtube.com">
+                  <img
+                    class="social-icon"
+                    alt="Youtube icon"
+                    src="media/youtubeIcon.svg"
+                  />
+                </a>
+              </li>
+              <li>
+                <!--Creative commons license, source: Wikimedia Commons, url: https://commons.wikimedia.org/wiki/File:CIS-A2K_Instagram_Icon_(Pink).svg -->
+                <a href="https://instagram.com">
+                  <img
+                    class="social-icon"
+                    alt="Instagram icon"
+                    src="media/instagramIcon.svg"
+                  />
+                </a>
+              </li>
+              <li>
+                <!--Creative commons license, source: IconScout.com, url: https://iconscout.com/icon/twitter-241 -->
+                <a href="https://twitter.com">
+                  <img
+                    class="social-icon"
+                    alt="Twitter icon"
+                    src="media/twitterIcon.png"
+                  />
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div>
+        <!-- Button to move to top -->
+        <button onclick="topFunction()" id="topBtn" title="Go to top">
+          <!-- Creative common license, source: Back Icon by Jemis Mali on Iconscout, url: https://iconscout.com/icon/back-197 -->
+          <img src="media/topbutton2.png" alt="Search button" />
+        </button>
+
+        <!-- Footnoter- Copyrights -->
+        <div id="copyrightNote">
+          <p>All rights Reserved &copy; 2021 SpacePark Corporation</p>
+        </div>
+      </div>
+      <!-- JavaScript code for collapsible faq and the got to top button -->
+      <script>
+        // Collapsible faq
+        var coll = document.getElementsByClassName("faqQuestion");
+        var i;
+
+        for (i = 0; i < coll.length; i++) {
+          coll[i].addEventListener("click", function () {
+            this.classList.toggle("active");
+            var content = this.nextElementSibling;
+            if (content.style.display === "block") {
+              content.style.display = "none";
+            } else {
+              content.style.display = "block";
+            }
+          });
+        }
+
+        // search
+        document
+          .getElementById("searchInput")
+          .addEventListener("keyup", function (event) {
+            event.preventDefault();
+            if (event.keyCode === 13) {
+              search();
+            }
+          });
+
+        function search() {
+          alert("Search not implemented at this time...");
+        }
+
+        //Get the button:
+        mybutton = document.getElementById("topBtn");
+
+        // When the user clicks on the button, scroll to the top of the document
+        function topFunction() {
+          document.body.scrollTop = 0; // For Safari
+          document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+        }
+
+        // Cookies and their buttons
+        function w3_close() {
+          document.getElementById("cookiesBar").style.display = "none";
+        }
+      </script>
+    </footer>
+  </body>
+</html>
